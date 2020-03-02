@@ -6,7 +6,7 @@ TARGET_PORT = 5006
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-namafile="scoob.png"
+namafile="r6siege.png"
 ukuran = os.stat(namafile).st_size
 
 fp = open('r6siege.png','rb')
