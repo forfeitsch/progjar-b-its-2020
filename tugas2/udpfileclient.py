@@ -9,7 +9,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 namafile="scoob.png"
 ukuran = os.stat(namafile).st_size
 
-fp = open('scoob.png','rb')
+fp = open('r6siege.png','rb')
 k = fp.read()
 terkirim=0
 for x in k:
