@@ -32,7 +32,7 @@
 
 ![alt text](screenshots/hasil_download.png)
 
-![alt text](file/kirā.JPG)
+![alt text](file/kirā.jpg)
 #
 ## Melihat list file dalam folder 'file'
 * Melihat list file dalam folder 'file' dalam format JSON dengan cara menjalankan melihat_list_file.py sebagai berikut
