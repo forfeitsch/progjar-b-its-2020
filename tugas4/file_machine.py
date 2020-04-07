@@ -1,37 +1,43 @@
-from file import File
+from control_file import Direct
 import json
 import logging
+import base64
 
 '''
-PROTOCOL FORMAT
+------ PROTOCOL FORMAT ------
 
-string terbagi menjadi 2 bagian, dipisahkan oleh spasi
-COMMAND spasi PARAMETER spasi PARAMETER ...
+string terbagi menjadi 2 bagian yang dipisahkan oleh spasi
+Format : command *spasi* parameter *spasi* parameter
 
-FITUR
+------ FITUR ------
 
-- download : untuk mengunduh file
-  request : download
-  parameter : nama_file
-  response : berhasil -> mendapatkan file
+a. Upload File
+   Untuk mengupload file ke folder 'file'
+   Request : upload
+   Parameter : namafile *spasi* isifile
+   Response : jika berhasil -> ok
+              jika gagal -> error
 
-- upload : untuk mengunggah file
-  request: upload
-  parameter : nama_file
-  response: berhasil -> berhasil upload file
+b. List File
+   Untuk melihat list file di dalam folder 'file'
+   Request : list
+   Parameter: -
+   Response: list file yang ada dalam folder 'file'
 
-- list : untuk melihat daftar file
-  request: list
-  parameter: tidak ada
-  response: daftar file yang ada dalam server
+c. Download File
+   Untuk mendownload file berdasarkan nama file
+   Request : download
+   Parameter : namafile yang ingin didownload
+   Response: hasil download file
 
-- jika command tidak dikenali akan merespon dengan ERRCMD
+d. Jika command tidak dikenali akan merespon dengan ERRCMD
 
 '''
-p = File()
+
+p = Direct()
 
 class FileMachine:
-    def proses(self,string_to_process, data):
+    def proses(self,string_to_process):
         s = string_to_process
         cstring = s.split(" ")
         try:
@@ -39,31 +45,34 @@ class FileMachine:
             if (command=='upload'):
                 logging.warning("upload")
                 nama = cstring[1].strip()
-                p.Upload(nama,data)
+                file = cstring[2].strip()
+
+                print(nama)
+                print(file.encode())
+                p.upload_file(nama,file.encode())
+                print(nama)
                 return "OK"
+
             elif (command=='list'):
                 logging.warning("list")
-                hasil = p.List()
-                hasil={"file":hasil}
-                return json.dumps(hasil)
+                hasil = p.list_file()
+                dict = {"status":"succes","data":hasil}
+                return json.dumps(dict)
+
             elif (command=='download'):
                 logging.warning("download")
                 nama = cstring[1].strip()
-                hasil = p.Download(nama)
-                # hasil = nama
-                return hasil
+                hasil = p.download_file(nama)
+                return hasil[0]
+
             else:
                 return "ERRCMD"
+
         except:
             return "ERROR"
 
-
-# if __name__=='__main__':
-#     pm = FileMachine()
-#     # data=open("File Client/number.txt", "rb")
-#     #     # pm.proses("upload number.txt", data.read())
-#     #     # hasil = pm.proses("list", "null")
-#     #     # print(hasil)
-#     # print(p.Download("pms.txt"))
-#     hasil = pm.proses("download sleep.txt", "null")
-#     print(hasil)
+if __name__=='__main__':
+    machine = FileMachine()
+    input = "pesan.txt"
+    hasil = machine.proses("list")
+    print(hasil)
