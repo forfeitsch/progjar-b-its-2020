@@ -7,7 +7,7 @@
 ## Membuat Server untuk menerima request dan merespon client 
 * Pertama, jalankan server.py kemudian jalankan masing-masing client
 
-![alt text](screenshots/server_start.jpg)
+![alt text](screenshots/server_start.png)
 #
 ## Mengupload File
 
