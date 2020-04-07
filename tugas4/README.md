@@ -2,7 +2,7 @@
 ## Dokumentasi Protokol
 * Fitur-fitur
 
-![alt text](screenshots/protokol_format.png)
+![alt text](screenshots/protocol_format.png)
 #
 ## Membuat Server untuk menerima request dan merespon client 
 * Pertama, jalankan server.py kemudian jalankan masing-masing client
