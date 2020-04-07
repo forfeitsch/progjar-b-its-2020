@@ -10,7 +10,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = ('127.0.0.1', 7777)
 print(sys.stderr, 'connecting to %s port %s' % server_address)
 sock.connect(server_address)
-requestfile = "cegah.jpg"
+requestfile = "kirā.jpg"
 request = (b"download "+requestfile.encode())
 print("Mendownload file "+request.decode()+"...")
 f = open(requestfile,"wb")

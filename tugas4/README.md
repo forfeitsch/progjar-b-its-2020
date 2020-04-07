@@ -2,7 +2,7 @@
 ## Dokumentasi Protokol
 * Fitur-fitur
 
-![alt text](screenshots/protokol_format.JPG)
+![alt text](screenshots/protokol_format.png)
 #
 ## Membuat Server untuk menerima request dan merespon client 
 * Pertama, jalankan server.py kemudian jalankan masing-masing client
@@ -24,9 +24,9 @@
 ## Mendownload File
 * Mendownload file logo.jpg dengan cara menjalankan download_file.py sebagai berikut
 
-![alt text](screenshots/download.JPG)
+![alt text](screenshots/download_file.png)
 
-![alt text](screenshots/server_download.JPG)
+![alt text](screenshots/server_download.png)
 
 * Maka hasilnya sebagai berikut
 
