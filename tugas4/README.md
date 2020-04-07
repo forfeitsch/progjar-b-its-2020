@@ -13,9 +13,9 @@
 
 * Upload file kira.jpg dengan cara menjalankan upload_file.py sebagai berikut
 
-![alt text](screenshots/client_upload.png)
+![alt text](screenshots/client_upload_file.png)
 
-![alt text](screenshots/server_upload.JPG)
+![alt text](screenshots/server_upload_file.png)
 
 * Maka file kira.jpg akan terupload ke folder 'file' sebagai berikut
 
