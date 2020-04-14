@@ -2,12 +2,12 @@
 ## Dokumentasi
 Langkah - langkah
 * Pertama jalankan file server_thread_http.py
-![alt text](Screenshots/server_start.png)
+![alt text](Screenshot/server_start.png)
 #
 * Kedua, jalankan http.py 
 
-![alt text](Screenshots/http_start.png)
+![alt text](Screenshot/http_start.png)
 #
 * Hasilnya 
 
-![alt text](Screenshots/server_result.png)
+![alt text](Screenshot/server_result.png)
